@@ -94,3 +94,14 @@ Generated React Query hooks and fetch client from the OpenAPI spec (e.g. `useHea
 ### `scripts` (`@workspace/scripts`)
 
 Utility scripts package. Each script is a `.ts` file in `src/` with a corresponding npm script in `package.json`. Run scripts via `pnpm --filter @workspace/scripts run <script>`. Scripts can import any workspace package (e.g., `@workspace/db`) by adding it as a dependency in `scripts/package.json`.
+
+## GitHub Integration Note
+
+The Replit GitHub integration (OAuth connector) was dismissed by the user. To push to GitHub, use a Personal Access Token (PAT) stored as the `GITHUB_TOKEN` secret, and use the `git` CLI directly with:
+
+```bash
+git remote set-url origin https://<PAT>@github.com/<username>/<repo>.git
+git push -u origin main
+```
+
+Do NOT attempt to use the Replit GitHub OAuth connector again unless the user explicitly asks to reconnect it. Store the PAT via the environment-secrets skill.
