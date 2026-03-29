@@ -1,0 +1,16 @@
+#!/bin/bash
+echo "=================================================="
+echo "  java-dev-rules — GitHub Copilot Rules for Java"
+echo "=================================================="
+echo ""
+echo "This repository contains GitHub Copilot instruction"
+echo "files for Java development. There is no application"
+echo "to run — just copy the .github/ folder into any"
+echo "Java project and Copilot will follow the rules."
+echo ""
+echo "Contents of .github/:"
+find .github -type f | sort
+echo ""
+echo "=================================================="
+echo "  Copy .github/ into your Java project to use."
+echo "=================================================="
