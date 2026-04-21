@@ -243,6 +243,29 @@ Multiple intents in one message = apply multiple rules simultaneously = give one
 
 ---
 
+### GROUP M — JAVA / SPRING BOOT UPGRADES
+
+**Signals:** upgrade, migrate, move from X to Y, bump version, modernise, latest version, Java 8/11/17/21, Spring Boot 2.x/3.x, javax to jakarta, Hibernate 6, Spring Security 6
+
+→ Always apply: `instructions/15-java-spring-boot-upgrade.instructions.md`
+→ The rule file is **completely self-contained** — never request web search, never tell the developer to look up migration guides
+→ Always ask for: current Java version, target Java version, current Spring Boot version, target Spring Boot version, build tool, Spring Cloud usage, Spring Security usage, key library versions
+→ Never skip the Java upgrade step before a Spring Boot upgrade
+→ Never bundle multiple phases into one commit — each phase commits separately
+→ For 2.x → 3.x upgrades: warn about javax→jakarta, Hibernate 6, and Spring Security 6 changes upfront
+
+**Example inputs handled by GROUP M:**
+- "Upgrade Java from 11 to 21"
+- "Migrate Spring Boot from 2.7 to 3.2"
+- "Move from javax to jakarta"
+- "Update our project to use the latest Spring Boot"
+- "Help me upgrade Hibernate"
+- "Bump Spring Cloud to the latest"
+- "Modernise this project to Java 21 + Spring Boot 3.4"
+- "WebSecurityConfigurerAdapter is deprecated — fix it"
+
+---
+
 ### GROUP L — PURE EXPLANATION / EDUCATION
 
 **Signals:** explain, what is, how does, why, what does this mean, walk me through, difference between, teach me, help me understand
@@ -394,3 +417,4 @@ Every response must follow this structure:
 | `12-performance-testing` | Load tests, profiling, GC, benchmarks |
 | `13-git-diff-code-review` | Reviewing git diffs / local uncommitted changes (ARCHITECT LEVEL) |
 | `14-apply-review-changes` | Implementing all suggestions from a prior code review |
+| `15-java-spring-boot-upgrade` | Upgrading Java/Spring Boot versions (self-contained, no web search) |
